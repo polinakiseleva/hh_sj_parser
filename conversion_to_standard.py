@@ -1,5 +1,4 @@
 import json
-import os
 from abc import ABC, abstractmethod
 
 import requests
@@ -42,8 +41,10 @@ class SuperJobAPI(API):
     """
     Класс для работы с сайтом SuperJob
     """
-    API_KEY = os.environ.get('API-KEY')
-    KEY = {'X-Api-App-Id': API_KEY}
+
+    API_KEY = {
+        'X-Api-App-Id': 'v3.r.137492499.b16a17e80e37142b49c504ab10c11777ac54cf17.e2b453df3816952a1869d934a67d40454631be46'
+    }
 
     def __init__(self):
         self.params = None
@@ -57,7 +58,7 @@ class SuperJobAPI(API):
                        ("period", 7),
                        ("count", 100)]
         self.response_url = 'https://api.superjob.ru/2.0/vacancies'
-        self.response = requests.get(self.response_url, headers=self.KEY, params=self.params)
+        self.response = requests.get(self.response_url, headers=self.API_KEY, params=self.params)
         self.response_data = json.loads(self.response.text)
         self.vacancies = self.response_data['objects']
         return self.vacancies
