@@ -44,6 +44,6 @@ class JSONSaverSJ(JSONSaver):
     def add_vacancy(self, search_word):
         self.discharge = SuperJobAPI()
         self.test = self.discharge.get_request(search_word)
-        with open('hh_data.json', 'w', encoding='utf-8') as file:
+        with open('sj_data.json', 'w', encoding='utf-8') as file:
             json.dump(self.test, file, indent=4, ensure_ascii=False)
             print("Данные успешно записаны!")
