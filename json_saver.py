@@ -29,7 +29,6 @@ class JSONSaverHH(JSONSaver):
         self.test = self.discharge.get_request(search_word)
         with open('hh_data.json', 'w', encoding='utf-8') as file:
             json.dump(self.test, file, indent=4, ensure_ascii=False)
-            print('Данные успешно записаны!')
 
 
 class JSONSaverSJ(JSONSaver):
@@ -46,4 +45,3 @@ class JSONSaverSJ(JSONSaver):
         self.test = self.discharge.get_request(search_word)
         with open('sj_data.json', 'w', encoding='utf-8') as file:
             json.dump(self.test, file, indent=4, ensure_ascii=False)
-            print("Данные успешно записаны!")
