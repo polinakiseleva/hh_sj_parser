@@ -38,7 +38,7 @@ class HeadHunterVacancy:
                       f"Заработная плата({vacancy['salary']['currency']}): {vacancy['salary']['from']} - {vacancy['salary']['to']}.\n"
                       f"Ссылка на вакансию: {vacancy['alternate_url']}.\n")
 
-    def top_ten_by_avg_salary(self):
+    def top_by_avg_salary(self):
         """
         Метод сортирует вакансии в соответствии с максимальной зарплатой
         """
@@ -88,7 +88,7 @@ class SuperJobVacancy:
                       f"Заработная плата({vacancy['currency']}): {vacancy['payment_from']} - {vacancy['payment_to']}.\n"
                       f"Ссылка на вакансию: {vacancy['link']}.\n")
 
-    def top_ten_by_avg_salary(self):
+    def top_by_avg_salary(self):
         """
         Метод сортирует вакансии в соответствии с максимальной зарплатой
         """
