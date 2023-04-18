@@ -29,7 +29,7 @@ class HeadHunterAPI(API):
     def get_request(self, *args):
         self.params = {'text': args,
                        'page': 1,
-                       'per_page': 100
+                       'per_page': 10
                        }
         self.response_url = requests.get(self.__base_url, params=self.params)
         self.response_data = json.loads(self.response_url.text)
@@ -56,7 +56,7 @@ class SuperJobAPI(API):
     def get_request(self, *args):
         self.params = [("keywords", [("srws", 1), ("skwc", "particular"), ("keys", args)]),
                        ("period", 7),
-                       ("count", 100)]
+                       ("count", 10)]
         self.response_url = 'https://api.superjob.ru/2.0/vacancies'
         self.response = requests.get(self.response_url, headers=self.API_KEY, params=self.params)
         self.response_data = json.loads(self.response.text)
