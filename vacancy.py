@@ -18,7 +18,7 @@ class HeadHunterVacancy:
         Метод выводит вакансии и информацию о компании, зарплате, должности из файла
         """
 
-        with open('hh_Data.json', 'r', encoding='utf-8') as file:
+        with open('hh_data.json', 'r', encoding='utf-8') as file:
             self.vacancy = json.load(file)
             self.vacancy_hh = sort_by_max_salary_hh(self.vacancy)
             for vacancy in self.vacancy_hh:
@@ -44,7 +44,7 @@ class HeadHunterVacancy:
         """
 
         leaders_list = []
-        with open('hh_Data.json', 'r', encoding='utf-8') as file:
+        with open('hh_data.json', 'r', encoding='utf-8') as file:
             self.vacancy = json.load(file)
             for i in self.vacancy:
                 if i['salary']['from'] is None or i['salary']['to'] is None or i['salary']['currency'] != 'RUR':
@@ -74,7 +74,7 @@ class SuperJobVacancy:
         Метод выводит вакансии и информацию о компании, зарплате, должности из файла
         """
 
-        with open('sj_Data.json', 'r', encoding='utf-8') as file:
+        with open('sj_data.json', 'r', encoding='utf-8') as file:
             self.vacancy = json.load(file)
             self.vacancy_sj = sort_by_max_salary_sj(self.vacancy)
             for vacancy in self.vacancy_sj:
@@ -94,7 +94,7 @@ class SuperJobVacancy:
         """
 
         leaders_list = []
-        with open('sj_Data.json', 'r', encoding='utf-8') as file:
+        with open('sj_data.json', 'r', encoding='utf-8') as file:
             self.vacancy = json.load(file)
             for vacancy in self.vacancy:
                 if vacancy['payment_to'] == 0:
